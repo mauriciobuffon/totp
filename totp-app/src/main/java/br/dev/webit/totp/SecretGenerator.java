@@ -4,7 +4,6 @@ import java.security.SecureRandom;
 
 public class SecretGenerator {
 
-    private static final SecureRandom RANDOM = new SecureRandom();
     private final int size;
 
     public SecretGenerator(int size) {
@@ -12,8 +11,9 @@ public class SecretGenerator {
     }
 
     public byte[] generate() {
+        SecureRandom rng = new SecureRandom();
         byte[] secret = new byte[size];
-        RANDOM.nextBytes(secret);
+        rng.nextBytes(secret);
         return secret;
     }
 }

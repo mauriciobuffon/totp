@@ -5,6 +5,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Mac;
+import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class OtpGenerator {
@@ -30,7 +31,7 @@ public class OtpGenerator {
         try {
             final byte[] text = ByteBuffer.allocate(Long.BYTES).putLong(movingFactor).array();
             Mac mac = Mac.getInstance(algorithm);
-            SecretKeySpec key = new SecretKeySpec(secret, algorithm);
+            SecretKey key = new SecretKeySpec(secret, algorithm);
             mac.init(key);
             hash = mac.doFinal(text);
         } catch (InvalidKeyException | NoSuchAlgorithmException ex) {
