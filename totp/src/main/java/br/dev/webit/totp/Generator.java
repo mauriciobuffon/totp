@@ -8,12 +8,12 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-public class OtpGenerator {
+public class Generator {
 
     private final String algorithm;
     private final int size;
 
-    public OtpGenerator(HashingAlgorithm algorithm, int size) {
+    public Generator(HashingAlgorithm algorithm, int size) {
         if (null == algorithm) {
             throw new IllegalArgumentException();
         }
@@ -47,6 +47,6 @@ public class OtpGenerator {
 
         final int otp = binary % (int) Math.pow(10, size);
 
-        return "%".concat("0".repeat(size)).concat("d").formatted(otp);
+        return String.format("%0" + size + "d", otp);
     }
 }

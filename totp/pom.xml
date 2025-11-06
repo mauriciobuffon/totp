@@ -6,22 +6,22 @@
 
     <parent>
         <groupId>br.dev.webit.totp</groupId>
-        <artifactId>totp-project</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>project</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>totp-app</artifactId>
+    <artifactId>totp</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

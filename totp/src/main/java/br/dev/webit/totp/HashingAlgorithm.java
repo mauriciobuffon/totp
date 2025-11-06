@@ -2,7 +2,9 @@ package br.dev.webit.totp;
 
 public enum HashingAlgorithm {
 
-    SHA1("HmacSHA1"), SHA256("HmacSHA256"), SHA512("HmacSHA512");
+    SHA1("HmacSHA1"),
+    SHA256("HmacSHA256"),
+    SHA512("HmacSHA512");
 
     private final String algorithm;
 

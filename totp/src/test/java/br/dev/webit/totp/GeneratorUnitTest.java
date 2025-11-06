@@ -9,14 +9,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class OtpGeneratorTest {
+public class GeneratorUnitTest {
 
     private Base32 base32 = new Base32();
 
     @ParameterizedTest
     @MethodSource("provider")
     public void test(HashingAlgorithm algorithm, int size, long timestamp, String seed, String expectedOtp) {
-        OtpGenerator generator = new OtpGenerator(algorithm, size);
+        Generator generator = new Generator(algorithm, size);
         String otp = generator.generate(base32.decode(seed), timestamp / 30);
         assertEquals(expectedOtp, otp);
     }
